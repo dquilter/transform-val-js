@@ -2,14 +2,16 @@
 	var transformVal = {
 		getTranslate: function(elem, dir) {
 			// Dir is direction of translation
-			
+
+			// Percentage vals return pixel val
+
 			// Test for jQuery Object and convert
-			transformVal.testjQuery();
-			
+			var elem = transformVal.testjQuery(elem);
+
 			var val;
 			var matrix = window.getComputedStyle(elem);
 			matrix = matrix.getPropertyValue('transform');
-			
+
 			// Convert matrix to array
 			matrix = transformVal.convertMatrixToArray(matrix);
 
@@ -57,7 +59,7 @@
 		},
 		testjQuery: function(elem) {
 			if (elem instanceof jQuery) {
-				elem = $(elem)[0];
+				elem = elem[0];
 			}
 			return elem;			
 		}
