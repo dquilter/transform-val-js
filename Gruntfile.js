@@ -14,24 +14,25 @@ module.exports = function (grunt) {
 				options: {
 					port: 8080,
 					livereload: true,
-					open: true
+                    open: true,
+                    nospawn: true
 				}
 			}
 		},
 		watch: {
 			js: {
 				files: ['src/*.js'],
-				tasks: 'copy',
+				tasks: ['copy'],
 				options: {
-					livereload: true
+					livereload: true,
 				}
 			}
 		}
 
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-copy');
+	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	grunt.registerTask('default', ['copy', 'connect', 'watch']);

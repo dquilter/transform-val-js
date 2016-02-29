@@ -26,6 +26,9 @@ main div {
 .translateAll {
 	transform: translateY(25px) translateX(40px);
 }
+.translatePerc {
+	transform: translateY(75%);
+}
 .skew {
 	transform: skew(20deg, 0deg);
 }
