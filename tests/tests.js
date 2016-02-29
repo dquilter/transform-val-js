@@ -38,28 +38,23 @@ QUnit.test( "Test Translate Values", function( assert ) {
 });
 
 QUnit.test( "Test Scale Values", function( assert ) {
-//	var yElem = document.createElement('div');
-//	yElem.style.transform = 'translateY(25px)';
-//	var xElem = document.createElement('div');
-//	xElem.style.transform = 'translateX(40px)';
+	var yElem = document.createElement('div');
+	yElem.style.transform = 'scaleY(0.9)';
+	elemContainer.appendChild(yElem);
+	
+	var xElem = document.createElement('div');
+	xElem.style.transform = 'scaleX(0.9)';
+	elemContainer.appendChild(xElem);
+
 	var multiElem = document.createElement('div');
 	multiElem.style.transform = 'scale(1.1, 1.1)';
-	
-//	elemContainer.appendChild(yElem);
-//	elemContainer.appendChild(xElem);
 	elemContainer.appendChild(multiElem);
-//	var yVal = transformVal.getTranslate(yElem, 'Y');
-//	var xVal = transformVal.getTranslate(xElem, 'X');
+	
+	var yVal = transformVal.getScale(yElem, 'Y');
+	var xVal = transformVal.getScale(xElem, 'X');
 	var multiVal = transformVal.getScale(multiElem);
-	
-//	var yValJq = document.createElement('div');
-//	yValJq.style.transform = 'translateY(75px)';
-//	yValJq.classList.add('transformJquery');
-//	elemContainer.appendChild(yValJq);
-//	var jQueryTest = transformVal.getTranslate($('.transformJquery'), 'Y');
-	
-//	assert.equal( yVal, 25, "Got Y Value" );
-//	assert.equal( xVal, 40, "Got X Value" );
+
+	assert.equal( yVal, 0.9, "Got Y Value" );
+	assert.equal( xVal, 0.9, "Got X Value" );
 	assert.deepEqual( multiVal, [1.1, 1.1], "Got Multiple Values" );
-//	assert.equal( jQueryTest, 75, "Got Y Value for jQuery Elem" );
 });

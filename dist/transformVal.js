@@ -30,7 +30,7 @@
 			
 			return val;
 		},
-		getScale: function(elem) {
+		getScale: function(elem, dir) {
 
 			// Test for jQuery Object and convert
 			transformVal.testjQuery();
@@ -44,9 +44,17 @@
 			
 			yVal = parseFloat(matrix[3]);
 			xVal = parseFloat(matrix[0]);
-			
-			val = [xVal, yVal];
-			
+
+			if (dir === 'Y') {
+				val = yVal;
+			}
+			if (dir === 'X') {
+				val = xVal;
+			}
+			if (dir === undefined) {
+				val = [xVal, yVal];
+			}
+						
 			return val;
 			
 		},
