@@ -1,0 +1,31 @@
+main {
+	max-width: 1240px;
+	width: 90%;
+	margin: 0 auto;
+}
+
+main div {
+	float: left;
+	width: 50px;
+	height: 50px;
+	margin-right: 50px;
+	background-color: darkslateblue;
+}
+.scale {
+	transform: scale(0.8);
+}
+.rotate {
+	transform: rotate(45deg);
+}
+.translateY {
+	transform: translateY(25px) translateX(40px);
+}
+.translateX {
+	transform: translateX(40px);
+}
+.translateAll {
+	transform: translateY(25px) translateX(40px);
+}
+.skew {
+	transform: skew(20deg, 0deg);
+}

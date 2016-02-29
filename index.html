@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Transforms</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+	<main>
+		<div class="scale"></div>
+		<div class="rotate"></div>
+		<div class="translateY"></div>
+		<div class="translateX"></div>
+		<div class="translateAll"></div>
+		<div class="skew"></div>
+		<div class="rotate translate"></div>
+	</main>
+	<script src="dist/transformVal.js"></script>
+	<script>
+		(function() {
+			console.log('Start');
+
+			var scale = document.querySelector('.scale')
+			var rotate = document.querySelector('.rotate')
+			var translateY = document.querySelector('.translateY')
+			var translateX = document.querySelector('.translateX')
+			var translateAll = document.querySelector('.translateAll')
+			var skew = document.querySelector('.skew')
+
+			console.log(scale);
+			console.log($('.scale'));
+
+		//	console.log(scale.style.transform);
+		//	console.log(rotate.style.transform);
+		//	console.log(translate.style.transform);
+		//	console.log(skew.style.transform);
+		//	console.log($('.scale').css('transform'));
+		//	console.log($('.rotate').css('transform'));
+		//	console.log($('.translate').css('transform'));
+		//	console.log($('.skew').css('transform'));
+
+			transformVal.getTranslate(translateY);
+			transformVal.getTranslate(translateX);
+			transformVal.getTranslate(translateAll);
+			console.log(transformVal.getTranslate(translateY, 'Y'));
+			console.log(transformVal.getTranslate(translateX, 'X'));
+			console.log(transformVal.getTranslate(translateAll));
+		//	transformVal.getTranslate($('.translate'), Y);
+
+		})();
+</script>
+</body>
+</html>
