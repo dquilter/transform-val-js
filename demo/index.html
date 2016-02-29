@@ -8,14 +8,19 @@
 </head>
 <body>
 	<main>
-		<div class="scale"></div>
-		<div class="rotate"></div>
 		<div class="translateY"></div>
 		<div class="translateX"></div>
 		<div class="translateAll"></div>
 		<div class="translatePerc"></div>
+		<div class="clear"></div>
+		
+		<div class="scale"></div>
+		<div class="rotate"></div>
 		<div class="skew"></div>
 		<div class="rotate translate"></div>
+		<div class="clear"></div>
+		
+		<div class="complex"></div>
 	</main>
 	<script src="../dist/transformVal.js"></script>
 	<script>
@@ -27,9 +32,14 @@
 			var translateAll = document.querySelector('.translateAll')
 			var translatePerc = document.querySelector('.translatePerc')
 			var skew = document.querySelector('.skew')
+			var complex = document.querySelector('.complex')
 
-			console.log(transformVal.getTranslate(translateY, 'Y'));
-			console.log(transformVal.getTranslate(translatePerc, 'Y'));
+//			console.log(transformVal.getTranslate(translateY, 'Y'));
+//			console.log(transformVal.getTranslate(translatePerc, 'Y'));
+			console.log(transformVal.getRotate(rotate));
+			console.log(transformVal.getTranslate(complex, 'Y'));
+			console.log(transformVal.getScale(complex, 'Y'));
+			console.log(transformVal.getRotate(complex));
 
 		})();
 </script>

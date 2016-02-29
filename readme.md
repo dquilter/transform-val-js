@@ -27,7 +27,7 @@ TransformVal.js returns somthing that's more usable:
 
 ### General
 
-For all of the following methods, the `elem` parameter can be a vanilla Javascript reference to an element, or a jQuery reference.
+For all of the following methods, the `elem` parameter is required, and can be a vanilla Javascript reference to an element, or a jQuery reference.
 
 ### getTranslate
 
@@ -35,7 +35,7 @@ Gets the values of a translation:
 
 	transformVal.getTranslate(elem, dir);
 
-The `dir` parameter is optional. Specifying either a 'Y' or 'X' will return the translation along the relevant axis.
+The `dir` parameter is optional. Specifying either a 'Y' or 'X' will return the translation along the relevant axis. Omitting this parameter will mean an array of values will be returned.
 
 Values in pixels will always be returned, whether the translation is specified in the styles as a fixed pixel value or a percentage.
 
@@ -45,4 +45,6 @@ Gets the values of a scale transformation:
 
 	transformVal.getScale(elem, dir);
 	
-The `dir` parameter is optional. Specifying either a 'Y' or 'X' will return the translation along the relevant axis.
+The `dir` parameter is optional. Specifying either a 'Y' or 'X' will return the translation along the relevant axis. Omitting this parameter will mean an array of values will be returned.
+
+Values returned are numeric, representing the 

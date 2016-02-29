@@ -32,3 +32,14 @@ main div {
 .skew {
 	transform: skew(20deg, 0deg);
 }
+
+div.clear {
+	clear: left;
+	float: none;
+	height: 100px;
+	background-color: transparent;
+}
+
+.complex {
+	transform: translateY(25px) scale(0.8) rotateX(45deg);
+}
