@@ -3,7 +3,9 @@ main {
 	width: 90%;
 	margin: 0 auto;
 }
-
+.row {
+	perspective: 1000px;
+}
 .row span {
 	display: block;
 	float: left;

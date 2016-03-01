@@ -87,6 +87,7 @@
 		get3DRotate: function(elem, dir) {
 			
 			var degVal;
+			var val;
 			
 			// Test for jQuery Object and convert
 			var elem = transformVal.testjQuery(elem);
@@ -105,6 +106,7 @@
 					transformVal.radiansToDeg(Math.asin(matrix[8])),
 					transformVal.radiansToDeg(Math.acos(matrix[10]))
 				]
+				val = transformVal.radiansToDeg(Math.atan2(matrix[2], matrix[0]) * -1);
 			} else if (dir === 'X') {
 				degVal = [
 					transformVal.radiansToDeg(Math.acos(matrix[5])),
@@ -112,6 +114,7 @@
 					transformVal.radiansToDeg(Math.asin(matrix[9]) * -1),
 					transformVal.radiansToDeg(Math.acos(matrix[10]))
 				]
+				val = transformVal.radiansToDeg(Math.atan2(matrix[6], matrix[5]));
 			}
 			
 			console.log(degVal)
@@ -127,11 +130,13 @@
 				return success;
 			}
 			
-			if (testParity(degVal) === true) {
-				return degVal[0];
-			} else {
-				return Error('Values do not match');
-			}
+//			if (testParity(degVal) === true) {
+//				return degVal[0];
+//			} else {
+//				return Error('Values do not match');
+//			}
+			
+			return val;
 			
 		},
 		

@@ -78,21 +78,41 @@ QUnit.test( "Test 2D Rotation Values", function( assert ) {
 	
 	assert.equal( standardVal, 45, "Got Rotation Value" );
 	assert.equal( highVal, 280, "Got Rotation Value" );
-	assert.equal( minusVal, -60, "Got Rotation Value" );
+	assert.equal( minusVal, 300, "Got Rotation Value" );
 });
 
 QUnit.test( "Test 3D Rotation Values", function( assert ) {
 	var yElem = document.createElement('div');
-	yElem.style.transform = 'rotateY(-45deg)';
+	yElem.style.transform = 'rotateY(45deg)';
 	elemContainer.appendChild(yElem);
+	var yHighElem = document.createElement('div');
+	yHighElem.style.transform = 'rotateY(245deg)';
+	elemContainer.appendChild(yHighElem);
+	var yMinusElem = document.createElement('div');
+	yMinusElem.style.transform = 'rotateY(-45deg)';
+	elemContainer.appendChild(yMinusElem);
 	
 	var xElem = document.createElement('div');
-	xElem.style.transform = 'rotateX(135deg)';
+	xElem.style.transform = 'rotateX(20deg)';
 	elemContainer.appendChild(xElem);
+	var xHighElem = document.createElement('div');
+	xHighElem.style.transform = 'rotateX(260deg)';
+	elemContainer.appendChild(xHighElem);
+	var xMinusElem = document.createElement('div');
+	xMinusElem.style.transform = 'rotateX(-200deg)';
+	elemContainer.appendChild(xMinusElem);
 	
 	var yVal = transformVal.get3DRotate(yElem, 'Y');
+	var yHighVal = transformVal.get3DRotate(yHighElem, 'Y');
+	var yMinusVal = transformVal.get3DRotate(yMinusElem, 'Y');
 	var xVal = transformVal.get3DRotate(xElem, 'X');
+	var xHighVal = transformVal.get3DRotate(xHighElem, 'X');
+	var xMinusVal = transformVal.get3DRotate(xMinusElem, 'X');
 
-	assert.equal( yVal, -45, "Got Y Value" );
-	assert.equal( xVal, 135, "Got X Value" );
+	assert.equal( yVal, 45, "Got Y Value" );
+	assert.equal( yHighVal, 245, "Got High Y Value" );
+	assert.equal( yMinusVal, -45, "Got Minus Y Value" );
+	assert.equal( xVal, 20, "Got X Value" );
+	assert.equal( xHighVal, 260, "Got High X Value" );
+	assert.equal( xMinusVal, -200, "Got Minus X Value" );
 });
