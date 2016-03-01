@@ -47,4 +47,12 @@ Gets the values of a scale transformation:
 	
 The `dir` parameter is optional. Specifying either a 'Y' or 'X' will return the translation along the relevant axis. Omitting this parameter will mean an array of values will be returned.
 
-Values returned are numeric, representing the 
+Values returned are numeric, representing the scale where 1 equals the original size, 0.5 would equal half the original size and 2 would equal twice the original size.
+
+### getRotate
+
+Gets the values of a 2D rotate transformation:
+
+	transformVal.getRotate(elem);
+	
+Values returned are numeric, representing the degrees that the element has been rotated.

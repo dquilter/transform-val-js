@@ -58,3 +58,25 @@ QUnit.test( "Test Scale Values", function( assert ) {
 	assert.equal( xVal, 0.9, "Got X Value" );
 	assert.deepEqual( multiVal, [1.1, 1.1], "Got Multiple Values" );
 });
+
+QUnit.test( "Test 2D Rotation Values", function( assert ) {
+	var standardElem = document.createElement('div');
+	standardElem.style.transform = 'rotate(45deg)';
+	elemContainer.appendChild(standardElem);
+	var standardVal = transformVal.getRotate(standardElem);
+	assert.equal( standardVal, 45, "Got Rotation Value" );
+
+//	var yElem = document.createElement('div');
+//	yElem.style.transform = 'rotateY(-45deg)';
+//	elemContainer.appendChild(yElem);
+//	
+//	var xElem = document.createElement('div');
+//	xElem.style.transform = 'rotateX(135deg)';
+//	elemContainer.appendChild(xElem);
+//	
+//	var yVal = transformVal.getRotate(yElem, 'Y');
+//	var xVal = transformVal.getRotate(xElem, 'X');
+
+//	assert.equal( yVal, -45, "Got Y Value" );
+//	assert.equal( xVal, 135, "Got X Value" );
+});

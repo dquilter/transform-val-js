@@ -55,7 +55,7 @@
 			
 		},
 		
-		getRotate: function(elem, dir) {
+		getRotate: function(elem) {
 			
 			var val;
 			
@@ -69,8 +69,6 @@
 			// Convert matrix to array
 			matrix = transformVal.convertMatrixToArray(matrix);
 			
-			console.log(matrix)
-			
 			degVal = [
 				transformVal.radiansToDeg(Math.acos(matrix[0])),
 				transformVal.radiansToDeg(Math.asin(matrix[1])),
@@ -78,13 +76,40 @@
 				transformVal.radiansToDeg(Math.acos(matrix[3]))
 			]
 			
-			return degVal;
+			function testParity(degVal) {
+				var test = degVal[0];
+				var success = true;
+				for (var i = 0; i < degVal.length; i++) {
+					if (degVal[i] !== test) {
+						success = false;
+					}
+				}
+				return success;
+			}
+			
+			if (testParity(degVal) === true) {
+				return degVal[0];
+			} else {
+				return Error('Values do not match');
+			}
 			
 		},
 		
 		// Utility
 		convertMatrixToArray: function(string) {
-			var val = string.replace('matrix(', '').replace(')', '');
+			// Test for 2D or 3D matrix
+			var reg = /matrix3d/;
+			var match = string.match(reg);
+
+			// Remove unwanted parts of string
+			var val;
+			if (match !== null) {
+				val = string.replace('matrix3d(', '').replace(')', '');
+			} else {
+				val = string.replace('matrix(', '').replace(')', '');
+			}
+			
+			// Create array
 			val = val.split(', ')
 			return val;
 		},
