@@ -8,20 +8,39 @@
 </head>
 <body>
 	<main>
-		<div class="translateY"></div>
-		<div class="translateX"></div>
-		<div class="translateAll"></div>
-		<div class="translatePerc"></div>
+		<h1>Transform Val Demo</h1>
+		<div class="row">
+			<h2>Translate</h2>
+			<span class="translateY"></span>
+			<span class="translateX"></span>
+			<span class="translateAll"></span>
+			<span class="translatePerc"></span>
+		</div>
 		<div class="clear"></div>
 		
-		<div class="scale"></div>
-		<div class="rotate"></div>
-		<div class="skew"></div>
-		<div class="rotate translate"></div>
+		<div class="row">
+			<h2>Rotate</h2>
+			<span class="rotate"></span>
+			<span class="rotateY"></span>
+			<span class="rotateX"></span>
+			<span class="rotateZ"></span>
+		</div>
+		<div class="clear"></div>
+
+		<div class="row">
+			<span class="scale"></span>
+			<span class="skew"></span>
+			<span class="rotate translate"></span>
+			<span class="clear"></span>
+		</div>
 		<div class="clear"></div>
 		
-		<div class="complex"></div>
-	</main>
+		<div class="row">
+			<span class="complex"></span>
+		</div>
+		<div class="clear"></div>
+
+		</main>
 	<script src="../dist/transformVal.js"></script>
 	<script>
 		(function() {
@@ -36,10 +55,11 @@
 
 //			console.log(transformVal.getTranslate(translateY, 'Y'));
 //			console.log(transformVal.getTranslate(translatePerc, 'Y'));
+//			console.log(transformVal.getRotate(rotate));
+//			console.log(transformVal.getTranslate(complex, 'Y'));
+//			console.log(transformVal.getScale(complex, 'Y'));
 			console.log(transformVal.getRotate(rotate));
-			console.log(transformVal.getTranslate(complex, 'Y'));
-			console.log(transformVal.getScale(complex, 'Y'));
-			console.log(transformVal.getRotate(complex));
+//			console.log(transformVal.getRotate(complex));
 
 		})();
 </script>

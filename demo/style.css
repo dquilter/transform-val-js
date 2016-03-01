@@ -4,19 +4,22 @@ main {
 	margin: 0 auto;
 }
 
-main div {
+.row span {
+	display: block;
 	float: left;
 	width: 50px;
 	height: 50px;
 	margin-right: 50px;
 	background-color: darkslateblue;
 }
-.scale {
-	transform: scale(0.8);
+.clear {
+	clear: left;
+	float: none;
+	height: 100px;
+	background-color: transparent;
 }
-.rotate {
-	transform: rotate(45deg);
-}
+
+/* Translate */
 .translateY {
 	transform: translateY(25px) translateX(40px);
 }
@@ -29,17 +32,31 @@ main div {
 .translatePerc {
 	transform: translateY(75%);
 }
-.skew {
-	transform: skew(20deg, 0deg);
+
+/* Scale */
+.scale {
+	transform: scale(0.8);
 }
 
-div.clear {
-	clear: left;
-	float: none;
-	height: 100px;
-	background-color: transparent;
+/* Rotate */
+.rotate {
+	transform: rotate(45deg);
+}
+.rotateY {
+	transform: rotateY(-70deg);
+}
+.rotateX {
+	transform: rotateX(135deg);
+}
+.rotateZ {
+	transform: rotateX(135deg);
+}
+
+.skew {
+	transform: skew(20deg, 0deg);
 }
 
 .complex {
 	transform: translateY(25px) scale(0.8) rotateX(45deg);
 }
+
