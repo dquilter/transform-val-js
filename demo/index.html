@@ -21,6 +21,8 @@
 		<div class="row">
 			<h2>Rotate</h2>
 			<span class="rotate"></span>
+			<span class="highRotate"></span>
+			<span class="minusRotate"></span>
 			<span class="rotateY"></span>
 			<span class="rotateX"></span>
 			<span class="rotateZ"></span>
@@ -46,6 +48,10 @@
 		(function() {
 			var scale = document.querySelector('.scale')
 			var rotate = document.querySelector('.rotate')
+			var highRotate = document.querySelector('.highRotate')
+			var minusRotate = document.querySelector('.minusRotate')
+			var rotateY = document.querySelector('.rotateY')
+			var rotateX = document.querySelector('.rotateX')
 			var translateY = document.querySelector('.translateY')
 			var translateX = document.querySelector('.translateX')
 			var translateAll = document.querySelector('.translateAll')
@@ -55,10 +61,13 @@
 
 //			console.log(transformVal.getTranslate(translateY, 'Y'));
 //			console.log(transformVal.getTranslate(translatePerc, 'Y'));
-//			console.log(transformVal.getRotate(rotate));
+			console.log(transformVal.getRotate(rotate));
+			console.log(transformVal.getRotate(highRotate));
+			console.log(transformVal.getRotate(minusRotate));
 //			console.log(transformVal.getTranslate(complex, 'Y'));
 //			console.log(transformVal.getScale(complex, 'Y'));
-			console.log(transformVal.getRotate(rotate));
+//			console.log(transformVal.get3DRotate(rotateY, 'Y'));
+//			console.log(transformVal.get3DRotate(rotateX, 'X'));
 //			console.log(transformVal.getRotate(complex));
 
 		})();

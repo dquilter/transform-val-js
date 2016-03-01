@@ -63,20 +63,36 @@ QUnit.test( "Test 2D Rotation Values", function( assert ) {
 	var standardElem = document.createElement('div');
 	standardElem.style.transform = 'rotate(45deg)';
 	elemContainer.appendChild(standardElem);
+
+	var highElem = document.createElement('div');
+	highElem.style.transform = 'rotate(280deg)';
+	elemContainer.appendChild(highElem);
+	
+	var minusElem = document.createElement('div');
+	minusElem.style.transform = 'rotate(-60deg)';
+	elemContainer.appendChild(minusElem);
+	
 	var standardVal = transformVal.getRotate(standardElem);
+	var highVal = transformVal.getRotate(highElem);
+	var minusVal = transformVal.getRotate(minusElem);
+	
 	assert.equal( standardVal, 45, "Got Rotation Value" );
+	assert.equal( highVal, 280, "Got Rotation Value" );
+	assert.equal( minusVal, -60, "Got Rotation Value" );
+});
 
-//	var yElem = document.createElement('div');
-//	yElem.style.transform = 'rotateY(-45deg)';
-//	elemContainer.appendChild(yElem);
-//	
-//	var xElem = document.createElement('div');
-//	xElem.style.transform = 'rotateX(135deg)';
-//	elemContainer.appendChild(xElem);
-//	
-//	var yVal = transformVal.getRotate(yElem, 'Y');
-//	var xVal = transformVal.getRotate(xElem, 'X');
+QUnit.test( "Test 3D Rotation Values", function( assert ) {
+	var yElem = document.createElement('div');
+	yElem.style.transform = 'rotateY(-45deg)';
+	elemContainer.appendChild(yElem);
+	
+	var xElem = document.createElement('div');
+	xElem.style.transform = 'rotateX(135deg)';
+	elemContainer.appendChild(xElem);
+	
+	var yVal = transformVal.get3DRotate(yElem, 'Y');
+	var xVal = transformVal.get3DRotate(xElem, 'X');
 
-//	assert.equal( yVal, -45, "Got Y Value" );
-//	assert.equal( xVal, 135, "Got X Value" );
+	assert.equal( yVal, -45, "Got Y Value" );
+	assert.equal( xVal, 135, "Got X Value" );
 });

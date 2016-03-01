@@ -42,14 +42,20 @@ main {
 .rotate {
 	transform: rotate(45deg);
 }
+.highRotate {
+	transform: rotate(160deg);
+}
+.minusRotate {
+	transform: rotate(-260deg);
+}
 .rotateY {
-	transform: rotateY(-70deg);
+	transform: rotateY(-45deg);
 }
 .rotateX {
-	transform: rotateX(135deg);
+	transform: rotateX(100deg);
 }
 .rotateZ {
-	transform: rotateX(135deg);
+	transform: rotateZ(135deg);
 }
 
 .skew {

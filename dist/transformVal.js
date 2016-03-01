@@ -54,10 +54,39 @@
 			return val;
 			
 		},
-		
 		getRotate: function(elem) {
 			
-			var val;
+			var degVal;
+			var val
+			
+			// Test for jQuery Object and convert
+			var elem = transformVal.testjQuery(elem);
+			// Get transform value
+			var matrix = transformVal.getTransformVal(elem);
+			
+			// Convert matrix to array
+			matrix = transformVal.convertMatrixToArray(matrix);
+			
+			degVal = [
+				transformVal.radiansToDeg(Math.acos(matrix[0])),
+				transformVal.radiansToDeg(Math.asin(matrix[1])),
+				transformVal.radiansToDeg(Math.asin(matrix[2]) * -1),
+				transformVal.radiansToDeg(Math.acos(matrix[3]))
+			]
+			
+			var val = transformVal.radiansToDeg(Math.atan2(matrix[1], matrix[0]));
+			if (val < 0) {
+				val = 360 + val;
+			}
+			
+			return val;
+						
+		},
+		
+		// 3D Transfoms
+		get3DRotate: function(elem, dir) {
+			
+			var degVal;
 			
 			// Test for jQuery Object and convert
 			var elem = transformVal.testjQuery(elem);
@@ -69,12 +98,23 @@
 			// Convert matrix to array
 			matrix = transformVal.convertMatrixToArray(matrix);
 			
-			degVal = [
-				transformVal.radiansToDeg(Math.acos(matrix[0])),
-				transformVal.radiansToDeg(Math.asin(matrix[1])),
-				transformVal.radiansToDeg(Math.asin(matrix[2]) * -1),
-				transformVal.radiansToDeg(Math.acos(matrix[3]))
-			]
+			if (dir === 'Y') {
+				degVal = [
+					transformVal.radiansToDeg(Math.acos(matrix[0])),
+					transformVal.radiansToDeg(Math.asin(matrix[2]) * -1),
+					transformVal.radiansToDeg(Math.asin(matrix[8])),
+					transformVal.radiansToDeg(Math.acos(matrix[10]))
+				]
+			} else if (dir === 'X') {
+				degVal = [
+					transformVal.radiansToDeg(Math.acos(matrix[5])),
+					transformVal.radiansToDeg(Math.asin(matrix[6])),
+					transformVal.radiansToDeg(Math.asin(matrix[9]) * -1),
+					transformVal.radiansToDeg(Math.acos(matrix[10]))
+				]
+			}
+			
+			console.log(degVal)
 			
 			function testParity(degVal) {
 				var test = degVal[0];
@@ -94,6 +134,7 @@
 			}
 			
 		},
+		
 		
 		// Utility
 		convertMatrixToArray: function(string) {
