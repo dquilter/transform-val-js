@@ -56,3 +56,11 @@ Gets the values of a 2D rotate transformation:
 	transformVal.getRotate(elem);
 	
 Values returned are numeric, representing the degrees that the element has been rotated. If the initial rotation is a negative value, the value returned will be the positive counterpart. For example a rotation of `-60deg` will return `300`.
+
+### get3DRotate
+
+Gets the values of a 3D rotate transformation:
+
+	transformVal.get3DRotate(elem);
+	
+Values returned are numeric, representing the degrees that the element has been rotated. If the initial rotation is a negative value, the value returned will be the positive counterpart. For example a rotation of `-60deg` will return `300`.

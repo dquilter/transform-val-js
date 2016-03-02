@@ -101,18 +101,24 @@ QUnit.test( "Test 3D Rotation Values", function( assert ) {
 	var xMinusElem = document.createElement('div');
 	xMinusElem.style.transform = 'rotateX(-200deg)';
 	elemContainer.appendChild(xMinusElem);
-	
+
+	var massiveElem = document.createElement('div');
+	massiveElem.style.transform = 'rotateY(765deg)';
+	elemContainer.appendChild(massiveElem);
+
 	var yVal = transformVal.get3DRotate(yElem, 'Y');
 	var yHighVal = transformVal.get3DRotate(yHighElem, 'Y');
 	var yMinusVal = transformVal.get3DRotate(yMinusElem, 'Y');
 	var xVal = transformVal.get3DRotate(xElem, 'X');
 	var xHighVal = transformVal.get3DRotate(xHighElem, 'X');
 	var xMinusVal = transformVal.get3DRotate(xMinusElem, 'X');
+	var massiveVal = transformVal.get3DRotate(massiveElem, 'X');
 
 	assert.equal( yVal, 45, "Got Y Value" );
 	assert.equal( yHighVal, 245, "Got High Y Value" );
-	assert.equal( yMinusVal, -45, "Got Minus Y Value" );
+	assert.equal( yMinusVal, 315, "Got Minus Y Value" );
 	assert.equal( xVal, 20, "Got X Value" );
 	assert.equal( xHighVal, 260, "Got High X Value" );
-	assert.equal( xMinusVal, -200, "Got Minus X Value" );
+	assert.equal( xMinusVal, 160, "Got Minus X Value" );
+	assert.equal( massiveVal, 45, "Got Minus X Value" );
 });
